@@ -12,7 +12,7 @@ public interface MovieDao {
     List<Movie> selectByMovieName(String movieName);
     Integer selectForMovieTypeCount(String movieType);
     List<Movie> selectByMovieType(@Param("movieType") String movieTyep, @Param("pageSize") Integer pageSize);
-    List<Movie> selectByMovieScore(String movieType);
+   // List<Movie> selectByMovieStar(String movieStar);
 
 
 

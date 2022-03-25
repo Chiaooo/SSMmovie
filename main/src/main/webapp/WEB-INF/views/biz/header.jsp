@@ -9,7 +9,7 @@
         <div class="category-list">
             <ul>
                 <li><a href="<%=request.getContextPath()%>/movie/home">首页</a></li>
-                <li><a href="/movie/category?movieType=动作">动作片</a></li>
+                <li><a href="<%=request.getContextPath()%>/movie/category?movieType=动作">动作片</a></li>
                 <li><a href="<%=request.getContextPath()%>/movie/category?movieType=爱情">爱情片</a></li>
                 <li><a href="<%=request.getContextPath()%>/movie/category?movieType=动漫">动漫片</a></li>
                 <li><a href="<%=request.getContextPath()%>/movie/category?movieType=剧情">剧情片</a></li>

@@ -24,10 +24,13 @@
         SELECT * FROM movie WHERE mid=#{movieId};
     </select>
     <select id="selectByMovieName" resultMap="movie">
-        SELECT * FROM movie WHERE mname LIKE "%"#{movieName}"%";
+        SELECT * FROM movie WHERE mname LIKE "%"#{movieName}"%" OR mstar LIKE"%"#{movieName}"%";
     </select>
     <select id="selectForMovieTypeCount" resultType="java.lang.Integer">
         SELECT COUNT(*) total FROM movie WHERE mtype LIKE "%"#{movieType}"%";
+    </select>
+    <select id="selectByMovieStar" resultMap="movie">
+        SELECT * FROM movie WHERE mstar LIKE "%"#{movieStar}"%";
     </select>
 
 </mapper>

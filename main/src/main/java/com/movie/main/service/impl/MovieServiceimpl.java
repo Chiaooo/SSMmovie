@@ -13,6 +13,7 @@ import java.util.List;
 @Service("movieService")
 public class MovieServiceimpl implements MovieService {
 
+    @Qualifier("movieDao")
     @Autowired
     private MovieDao movieDao;
 
@@ -31,6 +32,11 @@ public class MovieServiceimpl implements MovieService {
     public List<Movie> getMovie(String movieName){
         return movieDao.selectByMovieName(movieName);
     }
+
+//    @Override
+//    public List<Movie> getMovieByStar(String movieStar) {
+//        return movieDao.selectByMovieStar(movieStar);
+//    }
 
     @Override
     public List<Movie> getHome(String movieType, Integer pageSize){
