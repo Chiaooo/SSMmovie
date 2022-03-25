@@ -22,7 +22,7 @@
 <div class="search-main">
     <div class="tip"><h2>共找到${resultTotal}条结果</h2></div>
 
-    <c:forEach items="${searchMoviesByStar}" var="movieStar">
+    <c:forEach items="${searchMovies}" var="movie">
         <div class="movieRow" >
             <div class="movieUnit2" onclick="cctz(${movie.movieId})">
                 <h3>${movie.movieName}</h3>

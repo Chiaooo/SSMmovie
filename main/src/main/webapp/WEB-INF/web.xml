@@ -5,19 +5,6 @@
          version="4.0">
 
 
-  <!--编码过滤器-->
-<!--  <filter>-->
-<!--    <filter-name>encoding</filter-name>-->
-<!--    <filter-class>cn.ccttll.main.global.CharsetEncodingFilter</filter-class>-->
-<!--    <init-param>-->
-<!--      <param-name>encoding</param-name>-->
-<!--      <param-value>utf-8</param-value>-->
-<!--    </init-param>-->
-<!--  </filter>-->
-<!--  <filter-mapping>-->
-<!--    <filter-name>encoding</filter-name>-->
-<!--    <url-pattern>/*</url-pattern>-->
-<!--  </filter-mapping>-->
   <filter>
     <filter-name>encoding</filter-name>
     <filter-class>com.movie.main.global.EncodingFilter</filter-class>

@@ -17,22 +17,17 @@
 
     </resultMap>
 
-    <select id="selectByMovieType" resultMap="movie">
+    <select id="selectByMovieType" resultType="java.lang.String">
         SELECT * FROM movie WHERE mtype LIKE "%"#{movieType}"%" LIMIT 0,#{pageSize};
     </select>
-    <select id="selectByMovieId" resultMap="movie">
+    <select id="selectByMovieId" resultType="java.lang.String">
         SELECT * FROM movie WHERE mid=#{movieId};
     </select>
-    <select id="selectByMovieName" resultMap="movie">
+    <select id="selectByMovieName" resultType="java.lang.String">
         SELECT * FROM movie WHERE mname LIKE "%"#{movieName}"%";
     </select>
-    <select id="selectByMovieStar" resultMap="movie">
-        SELECT * FROM movie WHERE mstar LIKE"%"#{movieStar}"%";
+    <select id="selectForMovieTypeCount" resultType="java.lang.Integer">
+        SELECT COUNT(*) total FROM movie WHERE mtype LIKE "%"#{movieType}"%";
     </select>
-    <!--暂时搞不懂结果集
-    <select id="selectForMovieTypeCount" resultMap="Intege">
-        SELECT COUNT(*) total FROM movie WHERE mtype LIKE '%动作片%'
-    </select>
-    -->
 
 </mapper>
