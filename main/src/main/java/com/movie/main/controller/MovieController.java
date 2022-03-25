@@ -22,9 +22,9 @@ public class MovieController {
 
     @RequestMapping("/home")
     public String home(Map<String,Object> map){
-        map.put("actionMovies",movieService.getHome("动作片",12));
-        map.put("LoveMovies",movieService.getHome("爱情片",12));
-        map.put("comedyMovies",movieService.getHome("喜剧片",12));
+        map.put("actionMovies",movieService.getHome("动作",12));
+        map.put("LoveMovies",movieService.getHome("爱情",12));
+        map.put("comedyMovies",movieService.getHome("喜剧",12));
         return "home";
     }
 

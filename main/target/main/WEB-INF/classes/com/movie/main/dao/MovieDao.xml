@@ -17,13 +17,13 @@
 
     </resultMap>
 
-    <select id="selectByMovieType" resultType="java.lang.String">
+    <select id="selectByMovieType" resultMap="movie">
         SELECT * FROM movie WHERE mtype LIKE "%"#{movieType}"%" LIMIT 0,#{pageSize};
     </select>
-    <select id="selectByMovieId" resultType="java.lang.String">
+    <select id="selectByMovieId" resultMap="movie">
         SELECT * FROM movie WHERE mid=#{movieId};
     </select>
-    <select id="selectByMovieName" resultType="java.lang.String">
+    <select id="selectByMovieName" resultMap="movie">
         SELECT * FROM movie WHERE mname LIKE "%"#{movieName}"%";
     </select>
     <select id="selectForMovieTypeCount" resultType="java.lang.Integer">
