@@ -6,7 +6,20 @@
     <link href="../../../css/regist.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-
+<section class="galaxy">
+    <ul class="orbit">
+        <li class="sun"><span></span></li>
+        <li class="mercury"><span></span></li>
+        <li class="venus"><span></span></li>
+        <li class="earth"><span><span class="moon"></span></span></li>
+        <li class="mars"><span></span></li>
+        <li class="asteroids"><span></span></li>
+        <li class="jupiter"><span></span></li>
+        <li class="saturn"><span><span class="ring"></span></span></li>
+        <li class="uranus"><span></span></li>
+        <li class="neptune"><span></span></li>
+        <li class="pluto"><span></span></li>
+    </ul>
 <div class="reg">
     <div class="header">
         <h1>
@@ -19,28 +32,23 @@
     <form action="/user/toRegist" method="post" >
         <table>
             <tr>
-                <td>用户名：</td>
-                <td><input type="text" name="userName" pattern="[a-zA-Z]{6,12}" class="input1"
-                           required="required" placeholder="请输入6-12位的字母"></td>
+                <td><input type="text" name="userName" pattern="[a-zA-Z]{6,12}"
+                           required="required" placeholder="请输入6-12位的字母的用户名"></td>
             </tr>
             <tr>
-                <td>密&nbsp;&nbsp;&nbsp;&nbsp;码：</td>
-                <td><input type="password" name="userPassword" pattern="[0-9]{6,}" class="input1"
-                           required="required" placeholder="请输入至少6位数字"></td>
+                <td><input type="password" name="userPassword" pattern="[0-9]{6,}"
+                           required="required" placeholder="请输入至少6位数字的密码"></td>
             </tr>
             <tr>
-                <td>手机号：</td>
-                <td><input type="text" name="userPhone" pattern="1[35678]\d{9}" class="input1"
+                <td><input type="text" name="userPhone" pattern="1[35678]\d{9}"
                            required="required" placeholder="请输入以1[35678]开头手机号"></td>
             </tr>
             <tr>
-                <td>邮&nbsp;&nbsp;&nbsp;&nbsp;箱:</td>
-                <td><input type="email" name="userEmail" placeholder="请输入邮箱" class="input1"
+                <td><input type="email" name="userEmail" placeholder="请输入邮箱"
                            required="required"></td>
             </tr>
             <tr>
-                <td>性&nbsp;&nbsp;&nbsp;&nbsp;别：</td>
-                <td>
+                <td class="td1">
                     <input type="radio" name="userSex" value="male" class="td1">男
                     <input type="radio" name="userSex" value="female" class="td1">女
                 </td>
@@ -55,7 +63,7 @@
 
             <tr>
                 <td colspan="2">
-                    <div class="btn-red">
+                    <div>
                         <input type="submit" value="注册" id="reg-btn">
                     </div>
                 </td>

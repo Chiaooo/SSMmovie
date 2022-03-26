@@ -6,6 +6,20 @@
     <link href="../../../css/login.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
+<section class="galaxy">
+    <ul class="orbit">
+        <li class="sun"><span></span></li>
+        <li class="mercury"><span></span></li>
+        <li class="venus"><span></span></li>
+        <li class="earth"><span><span class="moon"></span></span></li>
+        <li class="mars"><span></span></li>
+        <li class="asteroids"><span></span></li>
+        <li class="jupiter"><span></span></li>
+        <li class="saturn"><span><span class="ring"></span></span></li>
+        <li class="uranus"><span></span></li>
+        <li class="neptune"><span></span></li>
+        <li class="pluto"><span></span></li>
+    </ul>
 <div class="login">
     <div class="header">
         <h1>
@@ -25,12 +39,10 @@
     <form action="/user/toLogin" method="post">
         <table>
             <tr>
-                <td class="td1">用户名</td>
-                <td><input type="text" class="input1" name="userName" vlaue="<%=username%>"></td>
+                <td><input type="text" class="input1" name="userName"  placeholder="用户名" vlaue="<%=username%>"></td>
             </tr>
             <tr>
-                <td class="td1">密&nbsp;&nbsp;&nbsp;&nbsp;码</td>
-                <td><input type="password" class="input1" name="userPassword"></td>
+                <td><input type="password" class="input1" name="userPassword" placeholder="密码"></td>
             </tr>
             <tr>
                 <td class="td1" colspan="2">
@@ -38,7 +50,7 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <div class="btn-red">
+                    <div>
                         <input type="submit" value="登录" id="login-btn">
                     </div>
                 </td>
