@@ -22,7 +22,7 @@
 
         <div class="search" id="search">
             <form action="/movie/search" method="post" >
-                <input type="text" name="movieName" class="input-movieName" placeholder="请输入影片名">
+                <input type="text" name="movieName" class="input-movieName" placeholder="请输入影片名或主演名">
                 <input type="submit" value="搜索" class=".submitName" >
             </form>
         </div>
