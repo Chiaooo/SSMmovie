@@ -1,59 +1,62 @@
 package com.movie.main.entity;
 
 public class Comment {
-    private int movieId;
-    private String userName;
-    private String comment;
-    private String commentDataTime;
-    private String userPhoto=null;
+	private int id;
+	private String userName;
+	private String comment;
+	private String commentDataTime;
+	private String userPhoto = null;
 
-    public Comment(){};
+	public Comment() {
+	}
 
-    public Comment(int movieId, String userName, String comment, String commentDataTime, String userPhoto) {
-        this.movieId = movieId;
-        this.userName = userName;
-        this.comment = comment;
-        this.commentDataTime = commentDataTime;
-        this.userPhoto = userPhoto;
-    }
+	;
 
-    public int getMovieId() {
-        return movieId;
-    }
+	public Comment(int id, String userName, String comment, String commentDataTime, String userPhoto) {
+		this.id = id;
+		this.userName = userName;
+		this.comment = comment;
+		this.commentDataTime = commentDataTime;
+		this.userPhoto = userPhoto;
+	}
 
-    public void setMovieId(int movieId) {
-        this.movieId = movieId;
-    }
+	public int getMovieId() {
+		return id;
+	}
 
-    public String getUserName() {
-        return userName;
-    }
+	public void setMovieId(int id) {
+		this.id = id;
+	}
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
+	public String getUserName() {
+		return userName;
+	}
 
-    public String getComment() {
-        return comment;
-    }
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
 
-    public void setComment(String comment) {
-        this.comment = comment;
-    }
+	public String getComment() {
+		return comment;
+	}
 
-    public String getCommentDataTime() {
-        return commentDataTime;
-    }
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
 
-    public void setCommentDataTime(String commentDataTime) {
-        this.commentDataTime = commentDataTime;
-    }
+	public String getCommentDataTime() {
+		return commentDataTime;
+	}
 
-    public String getUserPhoto() {
-        return userPhoto;
-    }
+	public void setCommentDataTime(String commentDataTime) {
+		this.commentDataTime = commentDataTime;
+	}
 
-    public void setUserPhoto(String userPhoto) {
-        this.userPhoto = userPhoto;
-    }
+	public String getUserPhoto() {
+		return userPhoto;
+	}
+
+	public void setUserPhoto(String userPhoto) {
+		this.userPhoto = userPhoto;
+	}
 }

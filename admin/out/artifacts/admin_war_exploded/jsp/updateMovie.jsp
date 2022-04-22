@@ -7,8 +7,9 @@
     <title>电影后台管理系统</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <meta name="viewport"
+          content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi"/>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/font.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/xadmin.css">
     <script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
@@ -30,8 +31,8 @@
                 <span class="x-red">*</span>电影名
             </label>
             <div class="layui-input-inline">
-                <input type="text" id="username" name="name"  placeholder="${movie.name}"
-                        class="layui-input">
+                <input type="text" id="username" name="name" placeholder="${movie.name}"
+                       class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
@@ -40,7 +41,7 @@
             </label>
             <div class="layui-input-inline">
                 <select name="type">
-                   <option value="">类别</option>
+                    <option value="">类别</option>
                     <c:forEach items="${sessionScope.movieTypeList}" var="movieType">
                         <option value="${movieType.type}">${movieType.type}</option>
                     </c:forEach>
@@ -48,14 +49,56 @@
                 <br>
                 <br>
             </div>
-        </div>
-        <div class="layui-form-item layui-form-text">
-            <label for="desc" class="layui-form-label">
-                描述
-            </label>
-            <div class="layui-input-block">
-                <textarea placeholder="${movie.synopsis}" id="desc" name="synopsis" class="layui-textarea"></textarea>
-                <button  class="layui-btn" lay-submit="" type="submit">修改</button>
+            <div class="layui-form-item">
+                <label for="director" class="layui-form-label">
+                    <span class="x-red">*</span>导演
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="director" name="director" required lay-verify="required"
+                           autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="star" class="layui-form-label">
+                    <span class="x-red">*</span>主演
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="star" name="star" required lay-verify="required"
+                           autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="area" class="layui-form-label">
+                    <span class="x-red">*</span>区域
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="area" name="area" required lay-verify="required"
+                           autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="year" class="layui-form-label">
+                    <span class="x-red">*</span>上映时间
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="year" name="year" required lay-verify="required"
+                           autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="sumary" class="layui-form-label">
+                    <span class="x-red">*</span>简介
+                </label>
+                <div class="layui-input-inline">
+                    <textarea cols="25" rows="5" class="layui-textarea" id="sumary" name="sumary"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">
+                </label>
+                <button class="layui-btn" lay-filter="add" lay-submit="">
+                    提交
+                </button>
             </div>
         </div>
     </form>

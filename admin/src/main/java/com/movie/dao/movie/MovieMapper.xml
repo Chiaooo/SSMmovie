@@ -3,16 +3,31 @@
         PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.movie.dao.movie.MovieMapper">
+    <update id="updateMovie" parameterType="Movie">
+        UPDATE movie3.movie
+        SET name    = #{name},
+            score=#{score},
+            sumary=#{sumary},
+            year=#{year},
+            star=#{star},
+            director=#{director},
+            area=#{area},
+            type=#{type}
+        WHERE id = #{id};
+    </update>
 
-    <select id="getMovieList" resultType="Movie">
-        select * from movie3.movie;
+    <select id="getMovieList" resultType="com.movie.pojo.Movie">
+        select *
+        from movie3.movie;
     </select>
 
-    <select id="getMovieById" resultType="Movie">
-        select * from movie3.movie where id = #{id};
+    <select id="getMovieById" resultType="com.movie.pojo.Movie">
+        select *
+        from movie3.movie
+        where id = #{id};
     </select>
 
-    <select id="getMovieByNameOrType" resultType="Movie" parameterType="String">
+    <select id="getMovieByNameOrType" resultType="com.movie.pojo.Movie" parameterType="String">
         select * from movie3.movie
         <where>
             <if test="name != ''">
@@ -25,14 +40,15 @@
     </select>
 
     <insert id="addMovie" parameterType="Movie">
-        insert into movie3.movie (id, name, type, synopsis, img, video)
-        VALUES (#{id}, #{name},#{type},#{synopsis},#{img},#{video})
+        insert into movie3.movie (id, name, score, sumary, year, star, director, area, type, img, video)
+        VALUES (#{id}, #{name}, #{score}, #{sumary}, #{year}, #{star}, #{director}, #{area}, #{type}, #{img}, #{video})
     </insert>
 
     <delete id="deleteMovieById" parameterType="integer">
-        delete from movie3.movie where id = #{id}
+        delete
+        from movie3.movie
+        where id = #{id}
     </delete>
-
 
 
 </mapper>

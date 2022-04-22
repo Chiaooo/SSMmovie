@@ -3,34 +3,39 @@
 
 <mapper namespace="com.movie.main.dao.MovieDao">
     <resultMap id="movie" type="Movie">
-        <id property="movieId" column="mid" javaType="Integer"/>
-        <result property="movieName" column="mname" javaType="String"/>
-        <result property="movieImgUrl" column="mimgurl" javaType="String"/>
-        <result property="movieScore" column="mscore" javaType="String"/>
-        <result property="movieDirector" column="mdirector" javaType="String"/>
-        <result property="movieStar" column="mstar" javaType="String"/>
-        <result property="movieType" column="mtype" javaType="String"/>
-        <result property="movieArea" column="marea" javaType="String"/>
-        <result property="movieYear" column="myear" javaType="String"/>
-        <result property="movieSummary" column="msumary" javaType="String"/>
-        <result property="moviePlayUrl" column="mplayurl" javaType="String"/>
+        <id property="id" column="id" javaType="Integer"/>
+        <result property="name" column="name" javaType="String"/>
+        <result property="img" column="img" javaType="String"/>
+        <result property="score" column="score" javaType="String"/>
+        <result property="director" column="director" javaType="String"/>
+        <result property="star" column="star" javaType="String"/>
+        <result property="type" column="type" javaType="String"/>
+        <result property="area" column="area" javaType="String"/>
+        <result property="year" column="year" javaType="String"/>
+        <result property="sumary" column="sumary" javaType="String"/>
+        <result property="video" column="video" javaType="String"/>
 
     </resultMap>
-
     <select id="selectByMovieType" resultMap="movie">
-        SELECT * FROM movie WHERE mtype LIKE "%"#{movieType}"%" LIMIT 0,#{pageSize};
+        SELECT *
+        FROM movie3.movie
+        WHERE type LIKE "%"#{type}"%"
+        LIMIT 0,#{pageSize};
     </select>
     <select id="selectByMovieId" resultMap="movie">
-        SELECT * FROM movie WHERE mid=#{movieId};
+        SELECT *
+        FROM movie3.movie
+        WHERE id = #{id};
     </select>
     <select id="selectByMovieName" resultMap="movie">
-        SELECT * FROM movie WHERE mname LIKE "%"#{movieName}"%" OR mstar LIKE"%"#{movieName}"%";
+        SELECT *
+        FROM movie3.movie
+        WHERE name LIKE "%"#{name}"%" OR star LIKE"%"#{name}"%";
     </select>
     <select id="selectForMovieTypeCount" resultType="java.lang.Integer">
-        SELECT COUNT(*) total FROM movie WHERE mtype LIKE "%"#{movieType}"%";
-    </select>
-    <select id="selectByMovieStar" resultMap="movie">
-        SELECT * FROM movie WHERE mstar LIKE "%"#{movieStar}"%";
+        SELECT COUNT(*) total
+        FROM movie3.movie
+        WHERE type LIKE "%"#{type}"%";
     </select>
 
 </mapper>

@@ -4,14 +4,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <link href="../../../css/header.css" rel="stylesheet" type="text/css"/>
-    <link href="../../../css/footer.css" rel="stylesheet" type="text/css"/>
-    <link href="../../../css/category.css" rel="stylesheet" type="text/css"/>
+    <link href="<%=request.getContextPath()%>/css/header.css" rel="stylesheet" type="text/css"/>
+    <link href="<%=request.getContextPath()%>/css/footer.css" rel="stylesheet" type="text/css"/>
+    <link href="<%=request.getContextPath()%>/css/category.css" rel="stylesheet" type="text/css"/>
 
 
     <script>
         function cctz(movieId) {
-            var url = "/movie/detail?"+"movieId="+movieId;
+            var url = "/movie/movie/detail?" + "id=" + movieId;
             window.location.href = url;
         }
     </script>
@@ -42,9 +42,9 @@
 
 <body>
 
-    <c:import url="header.jsp"></c:import>
+<c:import url="header.jsp"></c:import>
 
-    <div class="contain">
+<div class="contain">
     <div class="wrap">
         <div class="main">
             <div class="title">
@@ -58,49 +58,49 @@
             </div>
 
             <C:forEach items="${categoryMovies}" var="movie">
-                <div class="movieUnit" onclick="cctz(${movie.movieId})">
-                    <img src="${movie.movieImgUrl}" alt="">
-                    <p>${movie.movieName}</p>
+                <div class="movieUnit" onclick="cctz(${movie.id})">
+                    <img src="${movie.img}" alt="">
+                    <p>${movie.name}</p>
                 </div>
             </C:forEach>
-    </div>
+        </div>
 
 
         <div class="rank">
             <div class="rank-title">排行榜</div>
             <div class="rank-list">
-                <c:set var="rankNum" value="1" />
+                <c:set var="rankNum" value="1"/>
                 <c:forEach items="${scoreMovies}" var="movie">
-                <a href="/movie/detail?movieId=${movie.movieId}">
-                    <p class="num">${rankNum}</p>
-                    <p class="moviename">${movie.movieName}</p>
-                    <p class="moviescore">${movie.movieScore}</p>
-                    <c:set var="rankNum" value="${rankNum+1}" />
-                    <div class="clear"></div>
-                </a>
+                    <a href="/movie/detail?movieId=${movie.id}">
+                        <p class="num">${rankNum}</p>
+                        <p class="moviename">${movie.name}</p>
+                        <p class="moviescore">${movie.score}</p>
+                        <c:set var="rankNum" value="${rankNum+1}"/>
+                        <div class="clear"></div>
+                    </a>
                 </c:forEach>
             </div>
         </div>
         <div class="clear"></div>
-        </div>
     </div>
+</div>
 
-    <!--用隐藏样式的表单提交请求，刷新页面数据-->
-    <div class="pagefy">
-        <ul>
-            <form id="movieForm" action="/movie/category?movieType=${movieType}" method="post">
-                <input type="hidden" id="page" name="page" value="${page}">
-                <input type="hidden" id="last" name="last" value="${last}">
-                <li><a href="javascript:void(0)" onclick="submitMovieForm('first')">首页</a></li>
-                <li><a href="javascript:void(0)" onclick="submitMovieForm('pre')">上一页</a></li>
-                <li><a href="javascript:void(0)">当前第${page}页</a></li>
-                <li><a href="javascript:void(0)" onclick="submitMovieForm('next')">下一页</a></li>
-                <li><a href="javascript:void(0)" onclick="submitMovieForm('last')">尾页</a></li>
-            </form>
-        </ul>
-    </div>
-    <div class="clear"></div>
+<!--用隐藏样式的表单提交请求，刷新页面数据-->
+<div class="pagefy">
+    <ul>
+        <form id="movieForm" action="/movie/category?type=${type}" method="post">
+            <input type="hidden" id="page" name="page" value="${page}">
+            <input type="hidden" id="last" name="last" value="${last}">
+            <li><a href="javascript:void(0)" onclick="submitMovieForm('first')">首页</a></li>
+            <li><a href="javascript:void(0)" onclick="submitMovieForm('pre')">上一页</a></li>
+            <li><a href="javascript:void(0)">当前第${page}页</a></li>
+            <li><a href="javascript:void(0)" onclick="submitMovieForm('next')">下一页</a></li>
+            <li><a href="javascript:void(0)" onclick="submitMovieForm('last')">尾页</a></li>
+        </form>
+    </ul>
+</div>
+<div class="clear"></div>
 
-    <c:import url="footer.jsp"></c:import>
+<c:import url="footer.jsp"></c:import>
 </body>
 </html>

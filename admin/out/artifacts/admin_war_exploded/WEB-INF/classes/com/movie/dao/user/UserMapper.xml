@@ -5,7 +5,7 @@
 <mapper namespace="com.movie.dao.user.UserMapper">
 
     <select id="getLoginUser" resultType="User">
-        select * from movie3.user u
+        select * from movie3.admin u
         <trim prefix="where" prefixOverrides="and | or">
             <if test="username != null">
                 and u.username = #{username}
@@ -15,7 +15,7 @@
 
 
     <update id="updatePassword" parameterType="String">
-        update movie3.user set password = #{password};
+        update movie3.admin set password = #{password};
     </update>
 
 </mapper>

@@ -5,7 +5,7 @@
 <html>
 <head>
     <link href="<%=request.getContextPath()%>/css/home.css" rel="stylesheet" type="text/css"/>
-    <link href="<%=request.getContextPath()%>/css/header.css"  rel="stylesheet" type="text/css"/>
+    <link href="<%=request.getContextPath()%>/css/header.css" rel="stylesheet" type="text/css"/>
     <link href="<%=request.getContextPath()%>/css/footer.css" rel="stylesheet" type="text/css"/>
     <title>home</title>
 </head>
@@ -20,16 +20,16 @@
 <div class="movie">
 
     <div class="movie-category">
-        <a href="<%=request.getContextPath()%>/movie/category?movieType=动作" class="name">动作片</a>
-        <a href="<%=request.getContextPath()%>/movie/category?movieType=动作" class="more">更多>>></a>
+        <a href="<%=request.getContextPath()%>/movie/category?type=动作" class="name">动作片</a>
+        <a href="<%=request.getContextPath()%>/movie/category?type=动作" class="more">更多>>></a>
     </div>
     <div class="movie-list">
         <ul>
             <c:forEach items="${actionMovies}" var="movie">
                 <li>
-                    <a href="/movie/detail?movieId=${movie.movieId}">
-                        <img src="${movie.movieImgUrl}" alt="">
-                        <p>${movie.movieName}</p>
+                    <a href="/movie/movie/detail?id=${movie.id}">
+                        <img src="${movie.img}" alt="">
+                        <p>${movie.name}</p>
                     </a>
                 </li>
             </c:forEach>
@@ -40,16 +40,16 @@
 
 
     <div class="movie-category">
-        <a href="<%=request.getContextPath()%>/movie/category?movieType=喜剧" class="name">喜剧片</a>
-        <a href="<%=request.getContextPath()%>/movie/category?movieType=喜剧" class="more">更多>>></a>
+        <a href="<%=request.getContextPath()%>/movie/category?type=喜剧" class="name">喜剧片</a>
+        <a href="<%=request.getContextPath()%>/movie/category?type=喜剧" class="more">更多>>></a>
     </div>
     <div class="movie-list">
         <ul>
             <c:forEach items="${comedyMovies}" var="movie">
                 <li>
-                    <a href="/movie/detail?movieId=${movie.movieId}">
-                        <img src="${movie.movieImgUrl}" alt="">
-                        <p>${movie.movieName}</p>
+                    <a href="/movie/movie/detail?id=${movie.id}">
+                        <img src="${movie.img}" alt="">
+                        <p>${movie.name}</p>
                     </a>
                 </li>
             </c:forEach>
@@ -59,16 +59,16 @@
 
 
     <div class="movie-category">
-        <a href="<%=request.getContextPath()%>/movie/category?movieType=爱情" class="name">爱情片</a>
-        <a href="<%=request.getContextPath()%>/movie/category?movieType=爱情" class="more">更多>>></a>
+        <a href="<%=request.getContextPath()%>/movie/category?type=爱情" class="name">爱情片</a>
+        <a href="<%=request.getContextPath()%>/movie/category?type=爱情" class="more">更多>>></a>
     </div>
     <div class="movie-list">
         <ul>
             <c:forEach items="${LoveMovies}" var="movie">
                 <li>
-                    <a href="/movie/detail?movieId=${movie.movieId}">
-                        <img src="${movie.movieImgUrl}" alt="">
-                        <p>${movie.movieName}</p>
+                    <a href="/movie/movie/detail?id=${movie.id}">
+                        <img src="${movie.img}" alt="">
+                        <p>${movie.name}</p>
                     </a>
                 </li>
             </c:forEach>

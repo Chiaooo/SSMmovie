@@ -3,13 +3,13 @@
 <html>
 <head>
     <title>搜索</title>
-    <link href="../../../css/header.css" rel="stylesheet" type="text/css"/>
-    <link href="../../../css/footer.css" rel="stylesheet" type="text/css"/>
-    <link href="../../../css/search.css" rel="stylesheet" type="text/css"/>
+    <link href="<%=request.getContextPath()%>/css/header.css" rel="stylesheet" type="text/css"/>
+    <link href="<%=request.getContextPath()%>/css/footer.css" rel="stylesheet" type="text/css"/>
+    <link href="<%=request.getContextPath()%>/css/search.css" rel="stylesheet" type="text/css"/>
 
     <script>
-        function cctz(movieId) {
-            var url = "/movie/detail?movieId="+movieId;
+        function cctz(id) {
+            var url = "/movie/movie/detail?id=" + id;
             window.location.href = url;
         }
     </script>
@@ -23,14 +23,14 @@
     <div class="tip"><h2>共找到${resultTotal}条结果</h2></div>
 
     <c:forEach items="${searchMovies}" var="movie">
-        <div class="movieRow" >
-            <div class="movieUnit2" onclick="cctz(${movie.movieId})">
-                <h3>${movie.movieName}</h3>
-                <img src="${movie.movieImgUrl}" alt="">
+        <div class="movieRow">
+            <div class="movieUnit2" onclick="cctz(${movie.id})">
+                <h3>${movie.name}</h3>
+                <img src="${movie.img}" alt="">
             </div>
             <div class="movieInfo">
-                <p>主演：${movie.movieStar}</p>
-                <p>简介：${movie.movieSummary}</p>
+                <p>主演：${movie.star}</p>
+                <p>简介：${movie.sumary}</p>
             </div>
             <div class="clear"></div>
         </div>

@@ -1,123 +1,121 @@
 package com.movie.main.entity;
 
+
 public class Movie {
-    private Integer movieId;
-    private  String movieName;
-    private String movieImgUrl;
-    private String movieScore;
-    private String movieDirector;
-    private  String movieStar;
-    private  String movieType;
-    private  String movieArea;
-    private  String movieYear;
-    private  String movieSummary;
-    private  String moviePlayUrl;
+	private int id;
+	private String name;
+	private String type;
+	private String img;
+	private String video;
+	private String director;
+	private String star;
+	private String area;
+	private String year;
+	private String sumary;
+	private String score;
 
-    public Movie(Integer movieId, String movieName, String movieImgUrl) {
-        this.movieId = movieId;
-        this.movieName = movieName;
-        this.movieImgUrl = movieImgUrl;
-    }
+	public Movie() {
+	}
 
-    public Movie(Integer movieId, String movieName, String movieImgUrl, String movieScore, String movieDirector, String movieStar, String movieType, String movieArea, String movieYear, String movieSummary, String moviePlayUrl) {
-        this.movieId = movieId;
-        this.movieName = movieName;
-        this.movieImgUrl = movieImgUrl;
-        this.movieScore = movieScore;
-        this.movieDirector = movieDirector;
-        this.movieStar = movieStar;
-        this.movieType = movieType;
-        this.movieArea = movieArea;
-        this.movieYear = movieYear;
-        this.movieSummary = movieSummary;
-        this.moviePlayUrl = moviePlayUrl;
-    }
+	public int getId() {
+		return id;
+	}
 
-    public Integer getMovieId() {
-        return movieId;
-    }
+	public void setId(int id) {
+		this.id = id;
+	}
 
-    public void setMovieId(Integer movieId) {
-        this.movieId = movieId;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public String getMovieName() {
-        return movieName;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public void setMovieName(String movieName) {
-        this.movieName = movieName;
-    }
+	public String getType() {
+		return type;
+	}
 
-    public String getMovieImgUrl() {
-        return movieImgUrl;
-    }
+	public void setType(String type) {
+		this.type = type;
+	}
 
-    public void setMovieImgUrl(String movieImgUrl) {
-        this.movieImgUrl = movieImgUrl;
-    }
+	public String getImg() {
+		return img;
+	}
 
-    public String getMovieScore() {
-        return movieScore;
-    }
+	public void setImg(String img) {
+		this.img = img;
+	}
 
-    public void setMovieScore(String movieScore) {
-        this.movieScore = movieScore;
-    }
+	public String getVideo() {
+		return video;
+	}
 
-    public String getMovieDirector() {
-        return movieDirector;
-    }
+	public void setVideo(String video) {
+		this.video = video;
+	}
 
-    public void setMovieDirector(String movieDirector) {
-        this.movieDirector = movieDirector;
-    }
+	public String getDirector() {
+		return director;
+	}
 
-    public String getMovieStar() {
-        return movieStar;
-    }
+	public void setDirector(String director) {
+		this.director = director;
+	}
 
-    public void setMovieStar(String movieStar) {
-        this.movieStar = movieStar;
-    }
+	public String getStar() {
+		return star;
+	}
 
-    public String getMovieType() {
-        return movieType;
-    }
+	public void setStar(String star) {
+		this.star = star;
+	}
 
-    public void setMovieType(String movieType) {
-        this.movieType = movieType;
-    }
+	public String getArea() {
+		return area;
+	}
 
-    public String getMovieArea() {
-        return movieArea;
-    }
+	public void setArea(String area) {
+		this.area = area;
+	}
 
-    public void setMovieArea(String movieArea) {
-        this.movieArea = movieArea;
-    }
+	public String getYear() {
+		return year;
+	}
 
-    public String getMovieYear() {
-        return movieYear;
-    }
+	public void setYear(String year) {
+		this.year = year;
+	}
 
-    public void setMovieYear(String movieYear) {
-        this.movieYear = movieYear;
-    }
+	public String getSumary() {
+		return sumary;
+	}
 
-    public String getMovieSummary() {
-        return movieSummary;
-    }
+	public void setSumary(String sumary) {
+		this.sumary = sumary;
+	}
 
-    public void setMovieSummary(String movieSummary) {
-        this.movieSummary = movieSummary;
-    }
+	public String getScore() {
+		return score;
+	}
 
-    public String getMoviePlayUrl() {
-        return moviePlayUrl;
-    }
+	public void setScore(String score) {
+		this.score = score;
+	}
 
-    public void setMoviePlayUrl(String moviePlayUrl) {
-        this.moviePlayUrl = moviePlayUrl;
-    }
+	public Movie(int id, String name, String type, String img, String video, String director, String star, String area, String year, String sumary, String score) {
+		this.id = id;
+		this.name = name;
+		this.type = type;
+		this.img = img;
+		this.video = video;
+		this.director = director;
+		this.star = star;
+		this.area = area;
+		this.year = year;
+		this.sumary = sumary;
+		this.score = score;
+	}
 }
