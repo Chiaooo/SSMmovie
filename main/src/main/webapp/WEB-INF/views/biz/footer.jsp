@@ -1,17 +1,10 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
-
+<script src="<%=request.getContextPath()%>/js/wordcloud2.js"></script>
 <!--页脚-->
 <div class="footer">
-    <div class="link">
-        <ul>
-            <li><a href="">网站地图</a></li>
-            <li><a href="">帮助反馈</a></li>
-            <li><a href="">友情链接</a></li>
-            <li><a href="">广告招商</a></li>
-            <li><a href="">关于我们</a></li>
-            <li><a href="">版权声明</a></li>
-        </ul>
-        <div class="clear"></div>
-    </div>
+    <canvas id="canvas" width="1096.3px" height="266px">
+        <script src="<%=request.getContextPath()%>/js/data.js"></script>
+    </canvas>
+    <div class="clear"></div>
 </div>

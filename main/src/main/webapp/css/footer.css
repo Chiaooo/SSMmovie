@@ -1,27 +1,37 @@
-.footer{
-    margin:0 10%;
-    margin-top:50px;
-    padding-top:10px;
+.footer {
+    margin: 0 10%;
+    margin-top: 50px;
+    padding-top: 10px;
     border-top: solid 1px #e2e2e2;
 }
-.footer ul{
+
+.footer canvas {
+    width: 50%;
+}
+
+.footer ul {
     list-style-type: none;
 }
-.footer li{
-    float:left;
+
+.footer li {
+    float: left;
     width: 15%;
 }
-.footer a{
-    color:black;
+
+.footer a {
+    color: black;
     text-decoration: none;
 }
-.footer a:hover{
-    color:#bc2931;
+
+.footer a:hover {
+    color: #bc2931;
 }
-.declaration{
-    margin:30px auto;
+
+.declaration {
+    margin: 30px auto;
 }
-.declaration p{
+
+.declaration p {
     color: #666666;
     font-size: 12px;
     text-align: center;

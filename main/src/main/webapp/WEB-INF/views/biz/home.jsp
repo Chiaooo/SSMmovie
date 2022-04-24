@@ -15,7 +15,6 @@
 <c:import url="header.jsp"></c:import>
 
 <!--轮播图-->
-
 <!--影片分类推荐-->
 <div class="movie">
 
@@ -77,7 +76,6 @@
     </div>
 
 </div>
-
 
 <c:import url="footer.jsp"></c:import>
 </body>

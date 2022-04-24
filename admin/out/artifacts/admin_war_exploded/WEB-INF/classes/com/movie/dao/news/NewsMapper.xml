@@ -3,12 +3,15 @@
         PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.movie.dao.news.NewsMapper">
-    <select id="getNewsList" resultType="com.movie.pojo.News">
-        select * from movie3.news;
+    <select id="getNewsList" resultType="News">
+        select *
+        from movie3.news;
     </select>
 
     <select id="getNewsById" resultType="News">
-        select * from movie3.news where id = #{id};
+        select *
+        from movie3.news
+        where id = #{id};
     </select>
 
     <select id="getNewsByNameOrType" resultType="News" parameterType="String">
@@ -24,11 +27,13 @@
 
     <insert id="addNews" parameterType="News">
         insert into movie3.news (id, name, type, content)
-        VALUES (#{id},#{name},#{type},#{content})
+        VALUES (#{id}, #{name}, #{type}, #{content})
     </insert>
 
     <delete id="deleteNewsById" parameterType="integer">
-        delete from movie3.news where id = #{id}
+        delete
+        from movie3.news
+        where id = #{id}
     </delete>
 
     <update id="updateNews" parameterType="News">

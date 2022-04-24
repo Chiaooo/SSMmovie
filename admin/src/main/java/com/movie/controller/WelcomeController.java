@@ -1,11 +1,9 @@
 package com.movie.controller;
 
-import com.movie.pojo.Movie;
-import com.movie.pojo.MovieType;
-import com.movie.pojo.NewType;
-import com.movie.pojo.News;
+import com.movie.pojo.*;
 import com.movie.service.Movie.MovieService;
 import com.movie.service.News.NewsService;
+import com.movie.service.comment.CommentService;
 import com.movie.service.type.MovieTypeService;
 import com.movie.service.type.NewTypeService;
 import org.springframework.stereotype.Controller;
@@ -18,40 +16,55 @@ import java.util.List;
 
 @Controller
 public class WelcomeController {
-    @Resource
-    private NewTypeService newTypeService;
-    public int getNewTypeCount(){
-        List<NewType> newTypeList = newTypeService.getNewTypeList();
-        return newTypeList.size();
-    }
+	@Resource
+	private NewTypeService newTypeService;
 
-    @Resource
-    private NewsService newsService;
-    public int getNewsCount(){
-        List<News> newsList = newsService.getNewsList();
-        return newsList.size();
-    }
-    @Resource
-    private MovieTypeService movieTypeService;
-    public int getMovieTypeCount(){
-        List<MovieType> movieTypeList = movieTypeService.getMovieTypeList();
-        return movieTypeList.size();
-    }
-    @Resource
-    private MovieService movieService;
-    public int getMoviesCount(){
-        List<Movie> movieList = movieService.getMovieList();
-        return movieList.size();
-    }
+	public int getNewTypeCount() {
+		List<NewType> newTypeList = newTypeService.getNewTypeList();
+		return newTypeList.size();
+	}
 
-    @RequestMapping("welcome")
-    public String welcome(HttpSession session, Model model){
+	@Resource
+	private NewsService newsService;
 
-        model.addAttribute("newsCount",getNewsCount());
-        model.addAttribute("moviesCount",getMoviesCount());
-        model.addAttribute("movieTypeCount",getMovieTypeCount());
-        model.addAttribute("newsTypeCount",getNewTypeCount());
-        return "welcome";
-    }
+	public int getNewsCount() {
+		List<News> newsList = newsService.getNewsList();
+		return newsList.size();
+	}
+
+	@Resource
+	private MovieTypeService movieTypeService;
+
+	public int getMovieTypeCount() {
+		List<MovieType> movieTypeList = movieTypeService.getMovieTypeList();
+		return movieTypeList.size();
+	}
+
+	@Resource
+	private MovieService movieService;
+
+	public int getMoviesCount() {
+		List<Movie> movieList = movieService.getMovieList();
+		return movieList.size();
+	}
+
+	@Resource
+	private CommentService commentService;
+
+	public int getCommentsCounts() {
+		List<Comment> commentList = commentService.getCommentList();
+		return commentList.size();
+	}
+
+	@RequestMapping("welcome")
+	public String welcome(HttpSession session, Model model) {
+
+		model.addAttribute("newsCount", getNewsCount());
+		model.addAttribute("moviesCount", getMoviesCount());
+		model.addAttribute("movieTypeCount", getMovieTypeCount());
+		model.addAttribute("newsTypeCount", getNewTypeCount());
+		model.addAttribute("commentsCount", getCommentsCounts());
+		return "welcome";
+	}
 
 }

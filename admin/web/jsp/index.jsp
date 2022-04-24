@@ -80,6 +80,17 @@
             </li>
             <li>
                 <a href="javascript:;">
+                    <i class="iconfont">&#xe69e;</i>
+                    <cite>评论管理</cite>
+                    <i class="iconfont nav_right">&#xe6a7;</i>
+                </a>
+                <ul class="sub-menu">
+                    <li><a _href="${pageContext.request.contextPath}/commentList.html"><i
+                            class="iconfont">&#xe6a7;</i><cite>评论信息管理</cite></a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:;">
                     <i class="iconfont">&#xe6b8;</i>
                     <cite>用户管理</cite>
                     <i class="iconfont nav_right">&#xe6a7;</i>

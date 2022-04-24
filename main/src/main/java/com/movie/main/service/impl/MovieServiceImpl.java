@@ -5,16 +5,14 @@ import com.movie.main.dao.MovieDao;
 import com.movie.main.entity.Movie;
 import com.movie.main.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service("movieService")
-public class MovieServiceimpl implements MovieService {
+public class MovieServiceImpl implements MovieService {
 
-	@Qualifier("movieDao")
 	@Autowired
 	private MovieDao movieDao;
 

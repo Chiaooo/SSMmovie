@@ -4,7 +4,7 @@
 <div class="bg">
     <div class="header">
         <div class="web-logo">
-            <img src="/img/logo.jpg" alt="">
+            <img src="<%=request.getContextPath()%>/img/logo.jpg" alt="">
         </div>
         <div class="category-list">
             <ul>
@@ -30,7 +30,7 @@
 
         <div class="log-reg">
             <ul>
-                <li><a href="/movie/user/login"><img src="../../../img/login.png" alt=""></a></li>
+                <li><a href="/movie/user/login"><img src="<%=request.getContextPath()%>/img/login.png" alt=""></a></li>
                 <li><a href="/movie/user/login">
                     <c:choose>
                         <c:when test="${empty sessionScope.user.userName}">

@@ -15,7 +15,8 @@
 
 
     <update id="updatePassword" parameterType="String">
-        update movie3.admin set password = #{password};
+        update movie3.admin
+        set password = #{password};
     </update>
 
 </mapper>

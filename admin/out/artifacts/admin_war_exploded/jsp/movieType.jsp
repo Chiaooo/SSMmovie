@@ -26,10 +26,10 @@
 <div class="x-nav">
 
       <span class="layui-breadcrumb">
-        <a href="">首页</a>
-        <a href="">演示</a>
+        <a href="">电影管理</a>
+        <a href="">电影类别管理</a>
         <a>
-          <cite>导航元素</cite></a>
+          <cite>管理面板</cite></a>
       </span>
 
     <a class="layui-btn layui-btn-primary layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
