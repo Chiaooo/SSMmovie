@@ -1,6 +1,7 @@
 package com.movie.main.dao;
 
 import com.movie.main.entity.Movie;
+import com.movie.main.entity.Star;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -16,5 +17,5 @@ public interface MovieDao {
 
 	List<Movie> selectByMovieType(@Param("type") String movieType, @Param("pageSize") Integer pageSize);
 
-
+	Star selectByStarName(@Param("starName") String starName);
 }

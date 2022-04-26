@@ -16,6 +16,14 @@
         <result property="video" column="video" javaType="String"/>
 
     </resultMap>
+    <resultMap id="star" type="Star">
+        <id property="starName" column="starName" javaType="String"/>
+        <result property="starAge" column="starAge" javaType="String"/>
+        <result property="starSex" column="starSex" javaType="String"/>
+        <result property="starBirth" column="starBirth" javaType="Date"/>
+        <result property="boxOffice" column="boxOffice" javaType="String"/>
+        <result property="starImg" column="starImg" javaType="String"/>
+    </resultMap>
     <select id="selectByMovieType" resultMap="movie">
         SELECT *
         FROM movie3.movie
@@ -36,6 +44,11 @@
         SELECT COUNT(*) total
         FROM movie3.movie
         WHERE type LIKE "%"#{type}"%";
+    </select>
+    <select id="selectByStarName" resultType="star">
+        SELECT *
+        FROM movie3.star
+        WHERE starName = #{starName};
     </select>
 
 </mapper>

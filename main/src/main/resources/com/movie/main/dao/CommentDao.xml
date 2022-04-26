@@ -3,7 +3,7 @@
 
 <mapper namespace="com.movie.main.dao.CommentDao">
     <resultMap id="comment" type="Comment">
-        <result property="movieId" column="movieId" javaType="Integer"/>
+        <result property="id" column="movieId" javaType="Integer"/>
         <result property="userName" column="userName" javaType="String"/>
         <result property="comment" column="comment" javaType="String"/>
         <result property="commentDataTime" column="commentDataTime" javaType="String"/>
@@ -11,9 +11,12 @@
     </resultMap>
 
     <insert id="insertComment" parameterType="Comment">
-        INSERT comments(movieId,userName,comment,commentDataTime,userPhoto) VALUES(#{movieId},#{userName},#{comment},#{commentDataTime},#{userPhoto});
+        INSERT comments(movieId, userName, comment, commentDataTime, userPhoto)
+        VALUES (#{movieId}, #{userName}, #{comment}, #{commentDataTime}, #{userPhoto});
     </insert>
     <select id="selectBymovieId" resultMap="comment">
-       SELECT * FROM comments  WHERE movieId =#{movieId};
+        SELECT *
+        FROM comments
+        WHERE movieId = #{movieId};
     </select>
 </mapper>

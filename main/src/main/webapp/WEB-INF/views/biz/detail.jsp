@@ -8,6 +8,8 @@
     <meta charset="utf-8">
     <link href="<%=request.getContextPath()%>/css/header.css" rel="stylesheet" type="text/css"/>
     <link href="<%=request.getContextPath()%>/css/detail.css" rel="stylesheet" type="text/css"/>
+    <link href="<%=request.getContextPath()%>/css/like.css" rel="stylesheet" type="text/css"/>
+    <link href="<%=request.getContextPath()%>/css/star.css" rel="stylesheet" type="text/css"/>
 
     <!--引入videoJS插件样式、videoJS插件文件-->
     <%--    <link href="../../../js/video-js.min.css" rel="stylesheet">--%>
@@ -18,6 +20,7 @@
     <script src='https://vjs.zencdn.net/7.4.1/video.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.15.0/videojs-contrib-hls.min.js"
             type="text/javascript"></script>
+    <script src="<%=request.getContextPath()%>/js/jquery.js"/>
 
     <script>
         // videojs 简单使用
@@ -69,12 +72,64 @@
         </div>
         <div class="info-list">
             <p>导演：${movie.director}</p>
-            <p>主演：${movie.star}</p>
+            <p>主演：<a href="<%=request.getContextPath()%>/movie/starInfo?starName=${movie.star}">${movie.star}</a></p>
             <p>类型：${movie.type}</p>
             <p>制片国家/地区：${movie.area}</p>
             <p>语言：${movie.area}</p>
             <p>年份：${movie.year}</p>
             <p>评分：${movie.score}</p>
+            <div class="heart-btn">
+                <!-- 内容 -->
+                <div class="content">
+                    <!-- 爱心 -->
+                    <span class="heart"></span>
+                    <!-- 文字Liek -->
+                    <span class="like">Like</span>
+                    <!-- 数字 -->
+                    <span class="numb"></span>
+                </div>
+                <script>
+                    $(document).ready(function () {
+                        // 根据类名添加点击事件
+                        $('.content').click(function () {
+                            // 根据类切换类名
+                            $(this).toggleClass('heart-active')
+                            $('.like').toggleClass('heart-active')
+                            $('.heart').toggleClass('heart-active')
+                            $('.numb').toggleClass('heart-active')
+                        })
+                    })
+                </script>
+            </div>
+            <div id="scoremark" class="scoremark scores">
+                <em class="score">${movie.score}</em>
+                <span class="star">
+       <span class="ystar" style="width:80%"></span>
+       <ul>
+        <li><a href="javascript:void(0)" data-name="很差" class="one-star">1</a></li>
+        <li><a href="javascript:void(0)" data-name="较差" class="two-stars">2</a></li>
+        <li><a href="javascript:void(0)" data-name="一般" class="three-stars">3</a></li>
+        <li><a href="javascript:void(0)" data-name="较好" class="four-stars">4</a></li>
+        <li><a href="javascript:void(0)" data-name="很好" class="five-stars">5</a></li>
+       </ul>
+      </span>
+                <div style="left: 0px; display: none;" class="tips"></div>
+            </div>
+            <script>
+                //星星评分
+                starScore($(".scoremark"));
+
+                function starScore(star) {
+                    star.find(".star ul li a").mouseenter(function () {
+                        var txt = $(this).attr("data-name");
+                        var x = $(this).parent("li").index();
+                        star.find(".tips").html(txt).css("left", -6 + x * 24).show();
+                    });
+                    star.find(".star ul li a").mouseleave(function () {
+                        star.find(".tips").html("").css("left", 0).hide();
+                    });
+                }
+            </script>
         </div>
     </div>
     <div class="intro">
@@ -92,7 +147,7 @@
 
     <div class="Comment">
         <div class="comment-title">影片评论</div>
-        <form action="/user/comment?movieId=${movie.id}" method="post">
+        <form action="<%=request.getContextPath()%>/user/comment?movieId=${movie.id}" method="post">
             <textarea rows="" cols="" name="comment"></textarea>
             <input type="submit" value="发表影评">
         </form>

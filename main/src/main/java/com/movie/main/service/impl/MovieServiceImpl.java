@@ -3,10 +3,13 @@ package com.movie.main.service.impl;
 import com.movie.common.SubCEStrUtil;
 import com.movie.main.dao.MovieDao;
 import com.movie.main.entity.Movie;
+import com.movie.main.entity.Star;
+import com.movie.main.global.ReadDataSource;
 import com.movie.main.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.sql.DataSource;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +18,7 @@ public class MovieServiceImpl implements MovieService {
 
 	@Autowired
 	private MovieDao movieDao;
+	DataSource dataSource = ReadDataSource.getDataSource();
 
 	@Override
 	public Integer countMovie(String movieType) {
@@ -57,5 +61,10 @@ public class MovieServiceImpl implements MovieService {
 			}
 		}
 		return movieList;
+	}
+
+	@Override
+	public Star getStarInfo(String starName) {
+		return movieDao.selectByStarName(starName);
 	}
 }

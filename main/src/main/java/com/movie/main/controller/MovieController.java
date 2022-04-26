@@ -64,4 +64,10 @@ public class MovieController {
 		map.put("scoreMovies", movieService.getCategory(movieType, 10));
 		return "category";
 	}
+
+	@RequestMapping(value = "/starInfo")
+	public String getStarInfo(String starName, Map<String, Object> map) {
+		map.put("starInfo", movieService.getStarInfo(starName));
+		return "starInfo";
+	}
 }

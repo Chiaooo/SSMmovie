@@ -21,7 +21,7 @@
         </div>
 
         <div class="search" id="search">
-            <form action="/movie/movie/search" method="post">
+            <form action="<%=request.getContextPath()%>/movie/search" method="post">
                 <input type="text" name="name" class="input-movieName" placeholder="请输入影片名或主演名">
                 <input type="submit" value="搜索" class=".submitName">
             </form>
